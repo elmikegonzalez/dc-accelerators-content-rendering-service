@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/homepage.json",
+  "id": "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/homepage.json",
   "title": "Homepage Accelerator",
   "description": "Homepage Accelerator",
   "allOf": [
@@ -25,14 +25,18 @@
               "contentType": {
                 "title": "Content Types",
                 "enum": [
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/slider.json",
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/promobanner.json",
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/video.json",
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/text.json",
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/externalblock.json",
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/splitblock.json",
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/cardlist.json",
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/image.json"
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/banner.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/slider.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/promobanner.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/video.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/text.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/externalblock.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/splitblock.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/cardlist.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/image.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/link.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/blog.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/bloglist.json"
                 ]
               }
             }

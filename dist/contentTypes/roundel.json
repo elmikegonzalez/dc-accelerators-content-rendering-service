@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/roundel.json",
+  "id": "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/ulta/dist/contentTypes/roundel.json",
   "title": "Roundel",
   "description": "Roundel Accelerator",
   "allOf": [
@@ -31,7 +31,8 @@
         "Top Left",
         "Top Right",
         "Bottom Left",
-        "Bottom Right"
+        "Bottom Right",
+        "Middle Center"
       ],
       "title": "Roundel Position",
       "description": "Roundel Position"
