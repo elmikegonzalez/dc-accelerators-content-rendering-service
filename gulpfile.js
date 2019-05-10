@@ -97,6 +97,7 @@ gulp.task('sfcc-copy', function () {
 gulp.task('addPackageStyles', function () {
     return gulp.src([
         './node_modules/dc-accelerators/dist/renders/*/package/*.css',
+        './node_modules/dc-accelerators/dist/renders/*.css',
         './node_modules/dc-accelerators/dist/renders/*/package/*.js'
     ])
         .pipe(gulp.dest('dist/renders'))
@@ -380,7 +381,7 @@ gulp.task(
         'renders-types-copy',
         'renders-js-min',
         'addPackageStyles',
-        'addMinStyles'
+        //'addMinStyles'
     ],
     function () {
     }
