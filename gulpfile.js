@@ -13,12 +13,15 @@ var pump = require('pump');
 var processhtml = require('gulp-processhtml');
 var del = require('del');
 var concat = require('gulp-concat');
+var fs = require('fs');
 
 var insert = require('gulp-insert');
 var addSrc = require('gulp-add-src');
 
 var connect = require('gulp-connect');
 var watch = require('gulp-watch');
+var config = JSON.parse(fs.readFileSync('private/awsaccess.json'));
+var s3 = require('gulp-s3-upload')(config);
 var name;
 
 var dependencies = require('./dependencies.json');
@@ -94,9 +97,47 @@ gulp.task('sfcc-copy', function () {
         );
 });
 
+gulp.task("upload-content-types", function() {
+  gulp.src("./dist/contentTypes/**")
+    .pipe(s3({
+        Bucket: 'dev-solutions/maic/DynamicContentTypes/loreal', //  Required
+        ACL:    'public-read'       //  Needs to be user-defined
+      },
+      {
+        // S3 Constructor Options, ie:
+        maxRetries: 5
+      }));
+});
+
+gulp.task("upload-icons", function() {
+  gulp.src("./dist/icons/**")
+    .pipe(s3({
+        Bucket: 'dev-solutions/maic/Icons/loreal', //  Required
+        ACL:    'public-read'       //  Needs to be user-defined
+      },
+      {
+        // S3 Constructor Options, ie:
+        maxRetries: 5
+      }));
+});
+
+gulp.task("upload-content-slots", function() {
+  gulp.src("./dist/contentTypes/**")
+    .pipe(s3({
+        Bucket: 'dev-solutions/maic/DynamicContentSlots/loreal', //  Required
+        ACL:    'public-read'       //  Needs to be user-defined
+      },
+      {
+        // S3 Constructor Options, ie:
+        maxRetries: 5
+      }));
+});
+
+
 gulp.task('addPackageStyles', function () {
     return gulp.src([
         './node_modules/dc-accelerators/dist/renders/*/package/*.css',
+        './node_modules/dc-accelerators/dist/renders/*.css',
         './node_modules/dc-accelerators/dist/renders/*/package/*.js'
     ])
         .pipe(gulp.dest('dist/renders'))
@@ -105,7 +146,8 @@ gulp.task('addPackageStyles', function () {
 gulp.task('addMinStyles', ['addPackageStyles'], function () {
     return gulp.src([
         './dist/renders/*/package/*.min.css',
-        './dist/renders/*/package/*.js'
+        './dist/renders/*/package/*.js',
+        './dist/renders/*.css'
     ])
         .pipe(
             rename(function (path) {
@@ -225,11 +267,13 @@ gulp.task('del', function () {
 gulp.task('renders-html', function () {
     return (
         gulp
-            .src([
-                'src/renders/**/*.html',
-                '!src/renders/*/templates/*.html',
-                '!src/renders/**/visualisation.html'
-            ])
+          .src([
+            'src/renders/**/*.html',
+            '!src/renders/*/templates/*.html',
+            '!src/renders/**/visualisation.html',
+            '!src/renders/**/visualization.html',
+            '!src/renders/**/visualization*.html'
+          ])
             .pipe(processhtml())
             //.pipe(htmlmin({collapseWhitespace: true}))
             .pipe(gulp.dest('dist/renders'))
@@ -264,7 +308,9 @@ gulp.task('renders-types-copy', function () {
 gulp.task('renders-files-copy', function () {
     return gulp
         .src([
-            'src/renders/**/visualisation.html'
+            'src/renders/**/visualisation.html',
+            'src/renders/**/visualization.html',
+            'src/renders/**/visualization*.html'
         ])
         .pipe(replaceVisualization())
         .pipe(
@@ -380,7 +426,7 @@ gulp.task(
         'renders-types-copy',
         'renders-js-min',
         'addPackageStyles',
-        'addMinStyles'
+        //'addMinStyles'
     ],
     function () {
     }

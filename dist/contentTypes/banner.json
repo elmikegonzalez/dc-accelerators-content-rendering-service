@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/banner.json",
+  "id": "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/loreal/dist/contentTypes/banner.json",
   "title": "Banner Accelerator",
   "description": "Banner Accelerator",
   "allOf": [
@@ -10,17 +10,21 @@
   ],
   "propertyOrder": [
     "bannerImage",
-    "subheader",
     "header",
+    "headerFontColor",
+    "headerFontBackground",
+    "subheader",
+    "subheaderFontColor",
     "description",
+    "descriptionFontColor",
     "button",
     "textPositionLeft",
     "textPositionTop",
-    "textColour",
-    "bannerColor",
-    "bannerOpacity",
-    "style",
-    "stackMobileLayout"
+    "overlayColor",
+    "overlayOpacity",
+    "stackMobileLayout",
+    "hideOverlay",
+    "style"
   ],
   "type": "object",
   "properties": {
@@ -36,7 +40,7 @@
               "contentType": {
                 "title": "image",
                 "enum": [
-                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/image.json"
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/loreal/dist/contentTypes/image.json"
                 ]
               }
             }
@@ -74,7 +78,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "https://s3-eu-west-1.amazonaws.com/dev-solutions/DC-accelerators-with-CRS-v2.0.0/dist/contentTypes/link.json"
+          "$ref": "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/loreal/dist/contentTypes/link.json"
         }
       ]
     },
@@ -92,38 +96,64 @@
       "title": "Text position from middle",
       "description": "Enter a percentage value (without a '%' sign) to position text vertically from the middle"
     },
-    "textColour": {
+    "headerFontColor": {
       "type": "string",
       "minLength": 3,
-      "maxLength": 6,
-      "title": "Font Colour",
-      "description": "Enter a hex value for font colour"
+      "maxLength": 7,
+      "title": "Header Font Color",
+      "description": "Enter a value for font color. i.e FFFFFF, blue"
     },
-    "bannerColor": {
+    "headerFontBackground": {
       "type": "string",
       "minLength": 3,
-      "maxLength": 6,
-      "title": "Banner Color",
-      "description": "Enter a hex value for banner colour"
+      "maxLength": 7,
+      "title": "Header Font Background Highlight",
+      "description": "Enter a value for font color. i.e FFFFFF, blue"
     },
-    "bannerOpacity": {
+    "subheaderFontColor": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 7,
+      "title": "Subheader Font Color",
+      "description": "Enter a value for font color. i.e FFFFFF, blue"
+    },
+    "descriptionFontColor": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 7,
+      "title": "Description Font Color",
+      "description": "Enter a value for font color. i.e FFFFFF, blue"
+    },
+    "overlayColor": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 11,
+      "title": "Overlay Color",
+      "description": "Enter a value for the overlay color i.e FFFFFF, blue"
+    },
+    "overlayOpacity":{
       "type": "number",
-      "title": "Banner Opacity",
-      "description": "Enter a value between 0 and 1 (e.g. 0.3)",
+      "title": "Overlay Opacity",
+      "description": "Enter a value between 0 and 1 (e.g. 0.5)",
       "minimum": 0,
       "maximum": 1.01
-    },
-    "style": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100,
-      "title": "Style",
-      "description": "Add classname for CSS styling"
     },
     "stackMobileLayout": {
       "type": "boolean",
       "title": "Stack Mobile Layout",
       "description": "Enable to allow banner text to stack underneath the image on small screens"
+    },
+    "hideOverlay": {
+      "type": "boolean",
+      "title": "Hide Overlay",
+      "description": "Hide Overlay behind banner info. Default is false"
+    },
+    "style": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "title": "style",
+      "description": "Add prefix class for CSS styling. Leave empty for default styling"
     }
   }
 }

@@ -22,7 +22,8 @@
     "splitBlock",
     "card",
     "cardList",
-    "image"
+    "image",
+    "link"
   ],
   "image": [],
   "card": [
@@ -44,5 +45,16 @@
     "text"
   ],
   "text": [],
-  "video": []
+  "video": [],
+  "link": [],
+  "snippet":[
+    "link"
+  ],
+  "content-settings": [
+    "image",
+    "link"
+  ],
+  "bloglist":[
+    "snippet"
+  ]
 }
