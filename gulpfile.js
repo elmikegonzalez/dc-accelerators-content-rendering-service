@@ -58,7 +58,11 @@ gulp.task('addContentTypes', ['build'], function (cb) {
     for (var module in dependencies) {
         var moduleName = module.toLowerCase();
 
-        gulp.src('./node_modules/dc-accelerators-content-types/' + moduleName + '.json')
+      gulp.
+      src([
+        './node_modules/dc-accelerators-content-types/*' + moduleName + '.json',
+        './node_modules/dc-accelerators-content-types/**/' + moduleName + '.json'
+      ])
             .pipe(replace())
             .pipe(
                 gulp.dest('./dist/contentTypes/')
@@ -72,7 +76,11 @@ gulp.task('addContentTypes', ['build'], function (cb) {
 
         if (contentDependencies[module]) {
             contentDependencies[module].forEach(function (dependency) {
-                gulp.src('./node_modules/dc-accelerators-content-types/' + dependency + '.json')
+              gulp.
+              src([
+                './node_modules/dc-accelerators-content-types/' + dependency + '.json',
+                './node_modules/dc-accelerators-content-types/**/' + dependency + '.json'
+              ])
                     .pipe(replace())
                     .pipe(
                         gulp.dest('./dist/contentTypes/')
