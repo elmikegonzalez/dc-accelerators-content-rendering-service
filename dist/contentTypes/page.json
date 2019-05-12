@@ -1,0 +1,46 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/page.json",
+  "title": "Page Container",
+  "description": "A re-usable container for all content types",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "contentTypes": {
+      "type": "array",
+      "title": "Content Type",
+      "description": "Select and order content to display in the container",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
+                "title": "",
+                "enum": [
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/slider.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/video.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/text.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/externalBlock.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/splitBlock.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/image.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/cardList.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/banner.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/blogList.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/ugc.json",
+                  "https://s3-eu-west-1.amazonaws.com/dev-solutions/maic/demos/willow/dist/contentTypes/promoList.json"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
