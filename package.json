@@ -11,8 +11,8 @@
   "author": "Amplience",
   "dependencies": {
     "cms-javascript-sdk": "github:amplience/cms-javascript-sdk#2d7cb9d",
-    "dc-accelerators": "github:elmikegonzalez/dc-accelerators#demo/rh/willow",
-    "dc-accelerators-content-types": "github:elmikegonzalez/dc-accelerators-content-types#rh/willow",
+    "dc-accelerators": "github:elmikegonzalez/dc-accelerators#demo/willow",
+    "dc-accelerators-content-types": "github:elmikegonzalez/dc-accelerators-content-types#willow",
     "lory.js": "2.2.1",
     "showdown": "1.7.1"
   },
