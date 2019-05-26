@@ -25,6 +25,7 @@
             "type": "string",
             "title": "Segment",
             "enum": [
+              "RH-member",
               "bargain-hunter",
               "fashionista",
               "home-trendsetter",
