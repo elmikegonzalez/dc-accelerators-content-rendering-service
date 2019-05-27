@@ -11,25 +11,16 @@
     }
   ],
   "propertyOrder": [
-    "canvassize",
-    "backgroundImage",
+    "backgroundimage",
     "model",
     "main",
     "sub",
     "text1",
     "text2",
-    "colort",
-    "colorb"
+    "colort"
   ],
   "type": "object",
   "properties": {
-  "canvassize": {
-    "title": "Canvas size",
-    "description": "responsive size parameter 600-1800",
-    "type": "number",
-    "minimum": 600,
-    "maximum": 1800
-  },
     "backgroundimage":{
       "title": "Background Image",
       "description": "background image",
@@ -67,7 +58,7 @@
       "description": "1st banner message",
       "type": "string",
       "hint" : "The first line of banner message text",
-      "validation" : "must be no longer than 120 character"
+      "validation" : "must be no longer than 120 character",
       "minLength": 0,
       "maxLength": 120
     },
@@ -81,14 +72,8 @@
       "maxLength": 120
     },
     "colort": {
-      "title": "CTA color",
+      "title": "Color Text",
       "description": "Text color for CTA",
-      "format": "color",
-      "type": "string"
-    },
-    "colorb": {
-      "title": "CTA background",
-      "description": "background color for CTA",
       "format": "color",
       "type": "string"
     }
