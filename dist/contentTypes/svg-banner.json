@@ -11,26 +11,25 @@
     }
   ],
   "propertyOrder": [
-    "backgroundimage",
-    "heading1",
-    "heading1color",
-    "heading2",
-    "heading2color",
-    "heading3",
-    "heading3color",
-    "CTA",
-    "ctacolor",
-    "ctabgcolor",
-    "badgecopy1",
-    "badgecopy1color",
-    "badgecopy2",
-    "badgecopy2color",
-    "badgecopy3",
-    "badgecopy3color",
-    "badgebgcolor"
+    "canvassize",
+    "backgroundImage",
+    "model",
+    "main",
+    "sub",
+    "text1",
+    "text2",
+    "colort",
+    "colorb"
   ],
   "type": "object",
   "properties": {
+  "canvassize": {
+    "title": "Canvas size",
+    "description": "responsive size parameter 600-1800",
+    "type": "number",
+    "minimum": 600,
+    "maximum": 1800
+  },
     "backgroundimage":{
       "title": "Background Image",
       "description": "background image",
@@ -38,106 +37,58 @@
         { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
       ]
     },
-    "heading1": {
-      "title": "Heading 1",
-      "description": "Heading 1 copy",
+    "model":{
+      "title": "Product Image",
+      "description": "Product Image",
+      "hint": "image must be clipped with transparent background to be effective",
+      "allOf": [
+        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
+      ]
+    },
+    "main": {
+      "title": "Heading",
+      "description": "Heading of this product writeup",
+      "type": "string",
+      "validation" : "must be no longer than 40 character",
+      "minLength": 0,
+      "maxLength": 40
+    },
+    "sub": {
+      "title": "Sub heading",
+      "description": "Sub Heading copy",
+      "hint" : "Second line in the banner",
+      "validation" : "must be no longer than 40 character",
       "type": "string",
       "minLength": 0,
-      "maxLength": 100
+      "maxLength": 40
     },
-    "heading1color": {
-      "title": "Heading 1 color",
-      "description": "Text color for Heading 1",
-      "format": "color",
-      "type": "string"
-    },
-    "heading2": {
-      "title": "Heading 2",
-      "description": "Heading 2 copy",
+    "text1": {
+      "title": "Text 1",
+      "description": "1st banner message",
       "type": "string",
+      "hint" : "The first line of banner message text",
+      "validation" : "must be no longer than 120 character"
       "minLength": 0,
-      "maxLength": 100
+      "maxLength": 120
     },
-    "heading2color": {
-      "title": "Heading 2 color",
-      "description": "Text color for Heading 1",
-      "format": "color",
-      "type": "string"
-    },
-    "heading3": {
-      "title": "Heading 3",
-      "description": "Heading 3 copy",
+    "text2": {
+      "title": "Text 2",
+      "description": "2nd banner message",
       "type": "string",
+      "hint" : "The second line of banner message text",
+      "validation" : "must be no longer than 120 character",
       "minLength": 0,
-      "maxLength": 100
+      "maxLength": 120
     },
-    "heading3color": {
-      "title": "Heading 3 color",
-      "description": "Text color for Heading 3",
-      "format": "color",
-      "type": "string"
-    },
-    "CTA": {
-      "title": "Call to action",
-      "description": "CTA copy",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100
-    },
-    "ctacolor": {
+    "colort": {
       "title": "CTA color",
       "description": "Text color for CTA",
       "format": "color",
       "type": "string"
     },
-    "ctabgcolor": {
+    "colorb": {
       "title": "CTA background",
       "description": "background color for CTA",
-      "format": "color",
-      "type": "string"
-    },
-    "badgecopy1": {
-      "title": "Badge copy 1",
-      "description": "Badge line 1",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100
-    },
-    "badgecopy1color": {
-      "title": "badge copy 1 color",
-      "description": "Text color for badge line 1",
-      "format": "color",
-      "type": "string"
-    },
-    "badgecopy2": {
-      "title": "Badge copy 2",
-      "description": "Badge line 2",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100
-    },
-    "badgecopy2color": {
-      "title": "badge copy 2 color",
-      "description": "Text color for badge 2",
-      "format": "color",
-      "type": "string"
-    },
-    "badgecopy3": {
-      "title": "Badge copy 3",
-      "description": "Badge line 3",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 100
-    },
-    "badgecopy3color": {
-      "title": "badge copy 3 color",
-      "description": "Text color for badge line 3",
-      "format": "color",
-      "type": "string"
-    },
-    "badgebgcolor": {
-      "title": "Badge background",
-      "description": "background color for badge",
       "format": "color",
       "type": "string"
     }
