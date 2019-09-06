@@ -38,11 +38,27 @@
 }
 
 .rh-amp-dc-banner .rh-amp-dc-banner-info-wrap[data-align='left'] {
-  left: 65px;
+  left: 10%;
 }
 
 .rh-amp-dc-banner .rh-amp-dc-banner-info-wrap[data-align='right'] {
-  right: 65px;
+  left: 60%;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-info-wrap[data-align='center'] {
+  left: 35%;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-info-wrap[data-valign='top'] {
+  top: 10%;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-info-wrap[data-valign='middle'] {
+  top: 50%;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-info-wrap[data-valign='bottom'] {
+  top: 35%;
 }
 
 .rh-amp-dc-banner .rh-amp-dc-banner-info-wrap:before {
@@ -81,11 +97,35 @@
   margin-bottom: 1em;
 }
 
+.rh-amp-dc-banner .rh-amp-dc-banner-subheader[data-align='left'] {
+  text-align: left;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-subheader[data-align='right'] {
+  text-align: right;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-subheader[data-align='center'] {
+  text-align: center;
+}
+
 .rh-amp-dc-banner .rh-amp-dc-banner-description {
   text-transform: uppercase;
   font-family: adobe-caslon-pro,serif;
   font-weight: 400;
   font-size: 17px;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-description[data-align='left'] {
+  text-align: left;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-description[data-align='right'] {
+  text-align: right;
+}
+
+.rh-amp-dc-banner .rh-amp-dc-banner-description[data-align='center'] {
+  text-align: center;
 }
 
 .rh-amp-dc-banner .rh-amp-dc-banner-button {
